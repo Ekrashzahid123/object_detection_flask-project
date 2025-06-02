@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Real-Time Object Detection</title>
+  <style>
+    body {
+      background-color: #222;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    #container {
+      position: relative;
+      display: inline-block;
+    }
+    video, canvas {
+      border-radius: 10px;
+      width: 640px;
+      height: 480px;
+    }
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Real-Time Object Detection (TensorFlow.js)</h1>
+  <div id="container">
+    <video id="webcam" autoplay playsinline muted></video>
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <!-- TensorFlow.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <!-- COCO-SSD model -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+  <!-- Your app code -->
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
